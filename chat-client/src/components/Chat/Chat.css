@@ -76,9 +76,9 @@
 }
 
 .sendBtn>img{
-    width: 2.6vmax;
-    filter:brightness(100) invert();
+    width: 3vmax;
     transition: all 0.3s;
+    filter: contrast(100);
 }
 .sendBtn:hover{
     background-color: rgb(196, 101, 0);

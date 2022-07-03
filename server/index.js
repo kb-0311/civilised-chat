@@ -27,8 +27,8 @@ io.on("connection" , (socket)=>{
     socket.on('joined',({user})=>{
       users[socket.id]=user;
       console.log(`${user} has joined `);
-      socket.broadcast.emit('userJoined',{user:"Admin",message:` ${users[socket.id]} has joined`});
-      socket.emit('welcome',{user:"KB",message:`Welcome to the Civilised Chat,${users[socket.id]} `})
+      socket.broadcast.emit('userJoined',{user:"KB :",message:` ${users[socket.id]} has joined`});
+      socket.emit('welcome',{user:"KB :",message:`Welcome to the Civilised Chat,${users[socket.id]} `})
     })
 
     socket.on('message',({message,id})=>{
@@ -37,7 +37,7 @@ io.on("connection" , (socket)=>{
     })
     
     socket.on('disconnect',()=>{
-          socket.broadcast.emit('leave',{user:"KB :",message:`${users[socket.id]}  has left`});
+        socket.broadcast.emit('leave',{user:"KB :",message:`${users[socket.id]}  has left`});
         console.log(`user left`);
     })
     
