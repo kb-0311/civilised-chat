@@ -7,6 +7,7 @@ let user;
 
 const sendUser = () => {
     user = document.getElementById('joinInput').value;
+    
     document.getElementById('joinInput').value = "";
 }
 
@@ -18,7 +19,7 @@ const [name, setname] = useState("");
         <div className="JoinContainer">
             <img src={logo} alt="logo" />
             <h1>CIVILISED</h1>
-            <input onChange={(e) => setname(e.target.value)} placeholder="Enter Your Name" type="text" id="joinInput" />
+            <input onChange={(e) => {console.log(e.target.value) ;setname(e.target.value)}} placeholder="Enter Your Name" type="text" id="joinInput" />
                 <Link onClick={(event) => !name ? event.preventDefault() : null} to="/chat">  
                     <button onClick={sendUser} className="joinbtn">Enter the Train 🚞</button>
                 </Link>
@@ -28,3 +29,4 @@ const [name, setname] = useState("");
 }
 
 export default Join
+export  {user} ;
